@@ -2,14 +2,16 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 
+#define x data
 x_data=np.linspace(-0.5, 0.5, 200)[:, np.newaxis]
 print(x_data)
 print(x_data.shape)
 
-
+#define noise to y data
 noise=np.random.normal(0, 0.02, x_data.shape) #形状和x_data一样
 y_data=np.square(x_data)+noise
 
+#define placeholder
 x=tf.placeholder(tf.float32, [None, 1])
 y=tf.placeholder(tf.float32, [None, 1])
 
